@@ -244,16 +244,16 @@
                         const email = document.getElementById("email").value.trim();
                         const message = document.getElementById("message").value.trim();
 
-                        // WhatsApp message template
                         const whatsappMessage = `Hello, you have a new inquiry:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`;
 
-                        // Replace with your WhatsApp number (use full international format)
-                        const phoneNumber = 447763966531; // e.g. 447123456789 for UK
+                        // Make sure the phone number is a string!
+                        const phoneNumber = "447825565225"; // UK number without + or 0
 
                         const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
                         window.open(whatsappURL, "_blank");
                     });
                 </script>
+
 
                 <!-- gpt form end  -->
 
