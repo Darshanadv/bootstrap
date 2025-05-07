@@ -204,7 +204,7 @@
             <div class="col-md-5 mt-5">
                 <h3 class="mb-4">Contact form</h3>
                 <!-- form-bootstrap start -->
-                <form>
+                <form id="contactForm">
                     <div class="mb-3">
                         <label for="name" class="form-label">Full Name</label>
                         <input type="email" class="form-control" id="name">
@@ -212,13 +212,13 @@
 
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Email Address</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <input type="password" class="form-control" id="email">
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" id="message" rows="3"></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-danger">Submit</button>
@@ -229,12 +229,12 @@
                 <!-- form-bootstrap end -->
 
                 <!-- gpt form start -->
-                <form id="contactForm">
+                <!-- <form id="contactForm">
                     <input type="text" id="name" placeholder="Your Name" required>
                     <input type="email" id="email" placeholder="Your Email" required>
                     <textarea id="message" placeholder="Your Message" required></textarea>
                     <button type="submit">Submit</button>
-                </form>
+                </form> -->
 
                 <script>
                     document.getElementById("contactForm").addEventListener("submit", function (e) {
