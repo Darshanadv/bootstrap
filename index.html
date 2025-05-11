@@ -20,6 +20,30 @@
     <!-- Style End -->
 
     <title>BOOTSTRAP1-RESPONSIVE</title>
+
+    <style>
+        .whatsapp-button {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #1ebe5d;
+        }
+
+        .whatsapp-button i {
+            margin-right: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -212,23 +236,58 @@
                 <h3 class="mb-4">Contact form</h3>
                 <!-- form-bootstrap start -->
                 <form id="contactForm">
+                    <!-- Name -->
                     <div class="mb-3">
-                        <label for="name" class="form-label"> Name</label>
+                        <label for="name" class="form-label">Name (Required)<i class="bi bi-asterisk text-danger"
+                                style="font-size: 0.7em;"></i></label>
                         <input type="text" class="form-control" id="name">
+                        <div class="text-danger small" id="nameError"></div>
                     </div>
 
+                    <!-- Email -->
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Email Address</label>
+                        <label for="email" class="form-label">Email Address (Required)<i
+                                class="bi bi-asterisk text-danger" style="font-size: 0.7em;"></i></label>
                         <input type="email" class="form-control" id="email">
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        <div class="text-danger small" id="emailError"></div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number (Required)<i
+                                class="bi bi-asterisk text-danger" style="font-size: 0.7em;"></i></label>
+                        <input type="number" class="form-control" id="phone">
+                        <div class="text-danger small" id="phoneError"></div>
+                    </div>
+
+                    <!-- Date -->
+                    <div class="mb-3">
+                        <label for="date" class="form-label">Moving Date (Required)<i class="bi bi-asterisk text-danger"
+                                style="font-size: 0.7em;"></i></label>
+                        <input type="date" class="form-control" id="date" name="date">
+                        <div class="text-danger small" id="dateError"></div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Please specify your pickup location and the destination of
+                            moving<i class="bi bi-asterisk text-danger" style="font-size: 0.7em;"></i></label>
+                        <input type="text" class="form-control" id="transit">
+                        <div class="text-danger small" id="transitError"></div>
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                        <label for="exampleFormControlTextarea1" class="form-label">Message (Optional)</label>
                         <textarea class="form-control" id="message" rows="3"></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-danger">Submit</button>
+                    <div class="mb-3">
+                        <label for="photo" class="form-label">Attach Photo (optional)</label>
+                        <input class="form-control" type="file" id="photo" name="photo" accept="image/*">
+                    </div>
+
+
+                    <button type="submit" class="btn btn-danger whatsapp-button">Submit us on Whatsapp</button>
                 </form>
 
 
@@ -242,19 +301,80 @@
                     document.getElementById("contactForm").addEventListener("submit", function (e) {
                         e.preventDefault();
 
+                        let isValid = true;
+
+                        // Get all input values
                         const name = document.getElementById("name").value.trim();
                         const email = document.getElementById("email").value.trim();
+                        const phone = document.getElementById("phone").value.trim();
+                        const date = document.getElementById("date").value;
                         const message = document.getElementById("message").value.trim();
+                        const transit = document.getElementById("transit").value;
 
-                        const whatsappMessage = `Hello, you have a new inquiry:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`;
+                        // Get error fields
+                        const nameError = document.getElementById("nameError");
+                        const emailError = document.getElementById("emailError");
+                        const phoneError = document.getElementById("phoneError");
+                        const dateError = document.getElementById("dateError");
+                        const transitError = document.getElementById("transitError");
 
+                        // Clear previous messages
+                        nameError.innerText = "";
+                        emailError.innerText = "";
+                        phoneError.innerText = "";
+                        dateError.innerText = "";
+                        transitError.innerText = "";
 
-                        const phoneNumber = "447440693275"; // UK number
+                        // Validate Name
+                        if (name === "") {
+                            nameError.innerText = "Please enter your name.";
+                            isValid = false;
+                        }
 
+                        // Validate Email
+                        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (email === "") {
+                            emailError.innerText = "Please enter your email.";
+                            isValid = false;
+                        } else if (!emailPattern.test(email)) {
+                            emailError.innerText = "Please enter a valid email address.";
+                            isValid = false;
+                        }
+
+                        // Validate Phone
+                        const phonePattern = /^[0-9\s+\-()]{7,}$/;
+                        if (phone === "") {
+                            phoneError.innerText = "Please enter your phone number.";
+                            isValid = false;
+                        } else if (!phonePattern.test(phone)) {
+                            phoneError.innerText = "Please enter a valid phone number.";
+                            isValid = false;
+                        }
+
+                        // Validate transit location
+                        if (transit === "") {
+                            transitError.innerText = "Please provide both address.";
+                            isValid = false;
+                        }
+
+                        // Validate Date
+                        if (date === "") {
+                            dateError.innerText = "Please select a date.";
+                            isValid = false;
+                        }
+
+                        // If anything invalid, stop here
+                        if (!isValid) return;
+
+                        // WhatsApp Submission
+                        const whatsappMessage = `Hello, you have a new inquiry:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nDate: ${date}\nMessage: ${message}`;
+                        const phoneNumber = "447825565225"; // your WhatsApp number
                         const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
                         window.open(whatsappURL, "_blank");
                     });
                 </script>
+
 
 
                 <!-- gp form script end  -->
@@ -291,18 +411,16 @@
                         <h2 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Accordion Item #1
+                                Commercial move
                             </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <strong>This is the first item's accordion body.</strong> It is shown by default, until
-                                the collapse plugin adds the appropriate classes that we use to style each element.
-                                These classes control the overall appearance, as well as the showing and hiding via CSS
-                                transitions. You can modify any of this with custom CSS or overriding our default
-                                variables. It's also worth noting that just about any HTML can go within the
-                                <code>.accordion-body</code>, though the transition does limit overflow.
+                                <p>We specialize in fast, reliable office and business relocations with minimal
+                                    downtime.
+                                    From packing to setup, we handle everything with care and efficiency.
+                                    Let us move your business forward, stress-free.</p>
                             </div>
                         </div>
                     </div>
@@ -310,17 +428,17 @@
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Accordion Item #2
+                                Man with Van
                             </button>
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <strong>This is the second item's accordion body.</strong> It is hidden by default,
-                                until the collapse plugin adds the appropriate classes that we use to style each
-                                element. These classes control the overall appearance, as well as the showing and hiding
-                                via CSS transitions. You can modify any of this with custom CSS or overriding our
-                                default variables. It's also worth noting that just about any HTML can go within the
-                                <code>.accordion-body</code>, though the transition does limit overflow.
+                                <p>
+                                    Need a van and a helping hand? Our man with a van service is perfect for small
+                                    moves.
+                                    Friendly, affordable, and always on time.
+                                    Just tell us when and where — we’ll handle the rest.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -328,17 +446,17 @@
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Accordion Item #3
+                                Furniture pickup
                             </button>
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <strong>This is the third item's accordion body.</strong> It is hidden by default, until
-                                the collapse plugin adds the appropriate classes that we use to style each element.
-                                These classes control the overall appearance, as well as the showing and hiding via CSS
-                                transitions. You can modify any of this with custom CSS or overriding our default
-                                variables. It's also worth noting that just about any HTML can go within the
-                                <code>.accordion-body</code>, though the transition does limit overflow.
+                                <p>
+                                    Bought something bulky? We’ll pick it up and deliver it straight to your door.
+                                    Safe loading, secure transport, and same-day service available.
+                                    Let us do the heavy lifting for you.
+
+                                </p>
                             </div>
                         </div>
                     </div>
