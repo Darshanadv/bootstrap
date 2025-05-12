@@ -50,7 +50,7 @@
 
 <body>
     <!-- Navbar start -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(236, 77, 77);">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: rgb(236, 77, 77);">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="./images/logo.png" width="80px" height="40px" alt="Utility logo">
@@ -67,34 +67,34 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="#toAboutus">About Us</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#">Client</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Services
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Web Developement</a></li>
-                            <li><a class="dropdown-item" href="#">App Developement</a></li>
+                            <li><a class="dropdown-item" href="#toVanServices">Van Service</a></li>
+                            <li><a class="dropdown-item" href="#toManWithManServices">Man with Van</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">SEO</a></li>
+                            <li><a class="dropdown-item" href="#toPackagingServices">packaging</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link" href="#toContectForm">Contact Us</a>
                     </li>
 
                 </ul>
-                <form class="d-flex">
+                <!-- <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-light" type="submit">Search</button>
-                </form>
+                </form> -->
             </div>
         </div>
     </nav>
@@ -113,7 +113,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="./images/man and van.jpg" class="d-block w-100"
-                    style="height: 400px; width: 400px; object-fit: contain;" alt="...">
+                    style="height: 400px; width: 400px; object-fit: contain;" alt="Man with van image">
 
                 <div class="carousel-caption d-none d-md-block text-white">
                     <h5>Man With Van</h5>
@@ -122,7 +122,7 @@
             </div>
             <div class="carousel-item">
                 <img src="./images/Van.jpg" class="d-block w-100"
-                    style="height: 400px; width: 400px; object-fit: contain;" alt="...">
+                    style="height: 400px; width: 400px; object-fit: contain;" alt="Van image">
 
                 <div class="carousel-caption d-none d-md-block">
                     <h5>luton Van Service</h5>
@@ -131,7 +131,7 @@
             </div>
             <div class="carousel-item">
                 <img src="./images/packaging.jpg" class="d-block w-100"
-                    style="height: 400px; width: 400px; object-fit: contain;" alt="...">
+                    style="height: 400px; width: 400px; object-fit: contain;" alt="packaging work image">
 
                 <div class="carousel-caption d-none d-md-block">
                     <h5>packaging</h5>
@@ -158,9 +158,9 @@
     <div class="container-fluid">
         <!-- Tag-line -->
         <div class="row">
-            <div class="col-12">
+            <div class="col-12" id="toAboutus">
                 <h3 class="text-center mt-5 mb-2 fw-bold" style="font-size: 1.0rem; line-height: 1.8; color: #222;"
-                    data-aos="fade-up" data-aos-delay="1000">
+                    data-aos="fade-up" data-aos-delay="200">
                     <span style="font-size: 2rem; font-weight: 800; display: block; color: #000;">
                         Reliable House Moving Services You Can Trust
                     </span><br><br>
@@ -183,7 +183,7 @@
 
         <!-- feature -->
         <div class="row justify-content-evenly pt-5 pb-5">
-            <div class="col-md-3 text-center mt-5" data-aos="fade-right" data-aos-delay="1000">
+            <div class="col-md-3 text-center mt-5" data-aos="fade-right" data-aos-delay="200" id="toVanServices">
                 <h1>
                     <img src="./images/Van.jpg" alt="Van Icon"
                         style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; vertical-align: middle;">
@@ -193,7 +193,7 @@
                 <h5>Van Service</h5>
                 <p>"Luton van hire available at just £50/hr — perfect for moves, deliveries, and transport needs."</p>
             </div>
-            <div class="col-md-3 text-center mt-5" data-aos="fade-up" data-aos-delay="1000">
+            <div class="col-md-3 text-center mt-5" data-aos="fade-up" data-aos-delay="200" id="toManWithManServices">
                 <h1>
                     <img src="./images/man and van.jpg" alt="Van Icon"
                         style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; vertical-align: middle;">
@@ -201,7 +201,7 @@
                 <h5>Man With Van</h5>
                 <p>"Man with a van service from £65/hr — ideal for stress-free moving and extra helping hands."</p>
             </div>
-            <div class="col-md-3 text-center mt-5" data-aos="fade-left" data-aos-delay="1000">
+            <div class="col-md-3 text-center mt-5" data-aos="fade-left" data-aos-delay="200" id="toPackagingServices">
                 <h1>
                     <img src="./images/packaging.jpg" alt="Van Icon"
                         style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; vertical-align: middle;">
@@ -218,37 +218,36 @@
 
         <!-- growth -->
         <div class="row justify-content-evenly pt-3 pb-5">
-            <div class="col-md-5 pt-3" data-aos="fade-up" data-aos-delay="900">
-                <img src="./images/electrician-working-near-board-with-wires-installation-connection-electrics.jpg"
-                    class="img-fluid">
+            <div class="col-md-5 pt-3" data-aos="fade-up" data-aos-delay="200">
+                <img src="./images/middle image.jpg" class="img-fluid">
             </div>
-            <div class="col-md-5 pt-3" data-aos="flip-right" data-aos-delay="900">
+            <div class="col-md-5 pt-3" data-aos="flip-right" data-aos-delay="200">
                 <!-- progress-bar start -->
-                <h5 class="mt-3">Website-Developement</h5>
+                <h5 class="mt-3">UK Moves</h5>
                 <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25"
                     aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar bg-success" style="width: 25%"></div>
+                    <div class="progress-bar bg-success" style="width: 85%"></div>
                 </div>
 
-                <h5 class="mt-3">Software-Developement</h5>
+                <h5 class="mt-3">House clearance</h5>
                 <div class="progress" role="progressbar" aria-label="Info example" aria-valuenow="50" aria-valuemin="0"
                     aria-valuemax="100">
-                    <div class="progress-bar bg-info" style="width: 50%"></div>
+                    <div class="progress-bar bg-info" style="width: 95%"></div>
                 </div>
 
-                <h5 class="mt-3">SEO-Developement</h5>
+                <h5 class="mt-3">House removals</h5>
                 <div class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="75"
                     aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar bg-warning" style="width: 75%"></div>
+                    <div class="progress-bar bg-warning" style="width: 100%"></div>
                 </div>
 
-                <h5 class="mt-3">Marketing</h5>
+                <h5 class="mt-3">Commercial moves</h5>
                 <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100"
                     aria-valuemin="0" aria-valuemax="100">
                     <div class="progress-bar bg-danger" style="width: 100%"></div>
                 </div>
 
-                <h5 class="mt-3">App -Developement</h5>
+                <h5 class="mt-3">Packing Service</h5>
                 <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100"
                     aria-valuemin="0" aria-valuemax="100">
                     <div class="progress-bar bg-danger" style="width: 100%"></div>
@@ -260,15 +259,14 @@
 
         <!-- Contact form and address section start -->
         <div class="row justify-content-evenly pt-2 pb-5" style="background-color:#f1f1f1;">
-            <div class="col-md-5 mt-5">
-                <!-- <h3 class="mb-4">Contact form</h3> -->
-                <h3 class="mb-4" data-aos="fade-right" data-aos-delay="300">Contact form</h3>
+            <div class="col-md-5 mt-5" id="toContectForm">
+                <h3 class="mb-4" data-aos="fade-right" data-aos-delay="200">Contact form</h3>
 
                 <!-- form-bootstrap start -->
                 <form id="contactForm">
                     <!-- Name -->
                     <div class="mb-3">
-                        <label for="name" class="form-label" data-aos="fade-right" data-aos-delay="300">Name
+                        <label for="name" class="form-label" data-aos="fade-right" data-aos-delay="200">Name
                             (Required)<i class="bi bi-asterisk text-danger" style="font-size: 0.7em;"></i></label>
                         <input type="text" class="form-control" id="name">
                         <div class="text-danger small" id="nameError"></div>
@@ -276,7 +274,7 @@
 
                     <!-- Email -->
                     <div class="mb-3">
-                        <label for="email" class="form-label" data-aos="fade-right" data-aos-delay="300">Email Address
+                        <label for="email" class="form-label" data-aos="fade-right" data-aos-delay="200">Email Address
                             (Required)<i class="bi bi-asterisk text-danger" style="font-size: 0.7em;"></i></label>
                         <input type="email" class="form-control" id="email">
                         <div class="text-danger small" id="emailError"></div>
@@ -284,7 +282,7 @@
 
                     <!-- Phone -->
                     <div class="mb-3">
-                        <label for="phone" class="form-label" data-aos="fade-right" data-aos-delay="300">Phone Number
+                        <label for="phone" class="form-label" data-aos="fade-right" data-aos-delay="200">Phone Number
                             (Required)<i class="bi bi-asterisk text-danger" style="font-size: 0.7em;"></i></label>
                         <input type="number" class="form-control" id="phone">
                         <div class="text-danger small" id="phoneError"></div>
@@ -292,7 +290,7 @@
 
                     <!-- Date -->
                     <div class="mb-3">
-                        <label for="date" class="form-label" data-aos="fade-right" data-aos-delay="300">Moving Date
+                        <label for="date" class="form-label" data-aos="fade-right" data-aos-delay="200">Moving Date
                             (Required)<i class="bi bi-asterisk text-danger" style="font-size: 0.7em;"></i></label>
                         <input type="date" class="form-control" id="date" name="date">
                         <div class="text-danger small" id="dateError"></div>
@@ -300,7 +298,7 @@
 
 
                     <div class="mb-3">
-                        <label for="phone" class="form-label" data-aos="fade-right" data-aos-delay="300">Please specify
+                        <label for="phone" class="form-label" data-aos="fade-right" data-aos-delay="200">Please specify
                             your pickup location and the destination of
                             moving<i class="bi bi-asterisk text-danger" style="font-size: 0.7em;"></i></label>
                         <input type="text" class="form-control" id="transit">
@@ -309,19 +307,19 @@
 
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label" data-aos="fade-right"
-                            data-aos-delay="300">Message (Optional)</label>
+                            data-aos-delay="200">Message (Optional)</label>
                         <textarea class="form-control" id="message" rows="3"></textarea>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="photo" class="form-label" data-aos="fade-right" data-aos-delay="300"
-                            data-aos="fade-up" data-aos-delay="800">Attach Photo (optional)</label>
+                    <!-- <div class="mb-3">
+                        <label for="photo" class="form-label" data-aos="fade-right" data-aos-delay="200"
+                            data-aos="fade-up" data-aos-delay="200">Attach Photo (optional)</label>
                         <input class="form-control" type="file" id="photo" name="photo" accept="image/*">
-                    </div>
+                    </div> -->
 
 
                     <button type="submit" class="btn btn-danger whatsapp-button" data-aos="fade-up"
-                        data-aos-delay="800">Submit us on Whatsapp</button>
+                        data-aos-delay="200">Submit us on Whatsapp</button>
                 </form>
 
 
@@ -415,8 +413,8 @@
 
             </div>
 
-            <div class="col-md-5 mt-5" data-aos="fade-up" data-aos-delay="700">
-                <h3 class="mb-4" data-aos="fade-left" data-aos-delay="300">Address</h3>
+            <div class="col-md-5 mt-5" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="mb-4" data-aos="fade-left" data-aos-delay="200">Address</h3>
                 <p>
                     123 High Street <br>
                     Flat 4B,
@@ -435,7 +433,7 @@
         <!-- Contact form and address section end -->
 
         <!-- faq-start  -->
-        <div class="row justify-content-evenly pt-5 pb-5" data-aos="fade-up" data-aos-delay="900">
+        <div class="row justify-content-evenly pt-5 pb-5" data-aos="fade-up" data-aos-delay="200">
             <div class="col-md-10">
                 <h3 class="text-center pb-4">FAQ</h3>
 
@@ -506,20 +504,18 @@
         <div class="row justify-content-evenly bg-dark text-white pt-2 pb-5">
             <div class="col-md-3 pt-4">
                 <h5 class="pb-2">Tech app</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.
-                    Duis aute irure dolor</p>
+                <p>"From full house moves to Luton van hire, we’ve got every step covered. Whether you need a helping
+                    hand, a reliable van, or expert packing — our team makes moving easy, efficient, and affordable."
+                </p>
             </div>
             <div class="col-md-3 pt-4">
                 <h5 class="pb-2">Important links</h5>
                 <p>
                     <a href="#" class="link-light text-decoration-none">Home</a><br>
-                    <a href="#" class="link-light text-decoration-none">Contact Us</a><br>
-                    <a href="#" class="link-light text-decoration-none">About Us</a><br>
-                    <a href="#" class="link-light text-decoration-none">Our Team</a><br>
-                    <a href="#" class="link-light text-decoration-none">Our client</a><br>
+                    <a href="#toContectForm" class="link-light text-decoration-none">Contact Us</a><br>
+                    <a href="#toAboutus" class="link-light text-decoration-none">About Us</a><br>
+                    <!-- <a href="#" class="link-light text-decoration-none">Our Team</a><br>
+                    <a href="#" class="link-light text-decoration-none">Our client</a><br> -->
                 </p>
             </div>
             <div class="col-md-3 pt-4">
@@ -540,7 +536,8 @@
             <div class="col-12">
                 <p>© 2025 Your Business Name. All rights reserved.</p>
                 <footer style="text-align: center; font-size: 10px; color: #999;">
-                    © 2025. Icons by <a href="https://www.freepik.com" target="_blank" style="color: #999;">Freepik</a>
+                    © 2025. Icons & images by <a href="https://www.freepik.com" target="_blank"
+                        style="color: #999;">Freepik</a>
                 </footer>
 
             </div>
