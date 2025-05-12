@@ -199,7 +199,7 @@
                         style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; vertical-align: middle;">
                 </h1>
                 <h5>Man With Van</h5>
-                <p>"Man with a van service from £65/hr — ideal for stress-free moving and extra helping hands."</p>
+                <p>"Man with a van service from £85/hr — ideal for stress-free moving and extra helping hands."</p>
             </div>
             <div class="col-md-3 text-center mt-5" data-aos="fade-left" data-aos-delay="200" id="toPackagingServices">
                 <h1>
@@ -298,11 +298,17 @@
 
 
                     <div class="mb-3">
-                        <label for="phone" class="form-label" data-aos="fade-right" data-aos-delay="200">Please specify
-                            your pickup location and the destination of
-                            moving<i class="bi bi-asterisk text-danger" style="font-size: 0.7em;"></i></label>
-                        <input type="text" class="form-control" id="transit">
-                        <div class="text-danger small" id="transitError"></div>
+                        <label for="phone" class="form-label" data-aos="fade-right" data-aos-delay="200">Pickup
+                            location<i class="bi bi-asterisk text-danger" style="font-size: 0.7em;"></i></label>
+                        <input type="text" class="form-control" id="transit-from">
+                        <div class="text-danger small" id="transit-fromError"></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="phone" class="form-label" data-aos="fade-right" data-aos-delay="200">Dropoff
+                            location<i class="bi bi-asterisk text-danger" style="font-size: 0.7em;"></i></label>
+                        <input type="text" class="form-control" id="transit-to">
+                        <div class="text-danger small" id="transit-toError"></div>
                     </div>
 
                     <div class="mb-3">
@@ -341,21 +347,24 @@
                         const phone = document.getElementById("phone").value.trim();
                         const date = document.getElementById("date").value;
                         const message = document.getElementById("message").value.trim();
-                        const transit = document.getElementById("transit").value;
+                        const transitfrom = document.getElementById("transit-from").value;
+                        const transitto = document.getElementById("transit-to").value;
 
                         // Get error fields
                         const nameError = document.getElementById("nameError");
                         const emailError = document.getElementById("emailError");
                         const phoneError = document.getElementById("phoneError");
                         const dateError = document.getElementById("dateError");
-                        const transitError = document.getElementById("transitError");
+                        const transitfromError = document.getElementById("transit-fromError");
+                        const transittoError = document.getElementById("transit-toError");
 
                         // Clear previous messages
                         nameError.innerText = "";
                         emailError.innerText = "";
                         phoneError.innerText = "";
                         dateError.innerText = "";
-                        transitError.innerText = "";
+                        transitfromError.innerText = "";
+                        transittoError.innerText = "";
 
                         // Validate Name
                         if (name === "") {
@@ -384,8 +393,13 @@
                         }
 
                         // Validate transit location
-                        if (transit === "") {
-                            transitError.innerText = "Please provide both address.";
+                        if (transitfrom === "") {
+                            transitfromError.innerText = "Please provide pickup location.";
+                            isValid = false;
+                        }
+
+                        if (transitto === "") {
+                            transittoError.innerText = "Please provide dropoff location.";
                             isValid = false;
                         }
 
@@ -400,7 +414,7 @@
 
                         // WhatsApp Submission
                         const whatsappMessage = `Hello, you have a new inquiry:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nDate: ${date}\nMessage: ${message}`;
-                        const phoneNumber = "447825565225"; // your WhatsApp number
+                        const phoneNumber = "447440693275"; // your WhatsApp number
                         const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
                         window.open(whatsappURL, "_blank");
@@ -526,7 +540,7 @@
                     London. Post-code :
                     HA1 2SB <br>
                     United Kingdom <br>
-                    <i class="bi bi-telephone"></i>+44 1234598765
+                    <i class="bi bi-telephone"></i>+44 7440693275
                 </p>
             </div>
         </div>
